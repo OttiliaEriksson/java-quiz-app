@@ -96,7 +96,7 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.2.1</version>
                 <configuration>
-                    <configLocation>Project/src/main/resources/checkstyle.xml</configLocation>
+                    <configLocation>quiz-app/src/main/resources/checkstyle.xml</configLocation>
                     <consoleOutput>false</consoleOutput>
                     <linkXRef>false</linkXRef>
                     <goal>site</goal>
