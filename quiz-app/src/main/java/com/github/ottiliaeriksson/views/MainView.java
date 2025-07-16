@@ -6,6 +6,13 @@ import com.github.ottiliaeriksson.support.AppConfig;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * MainView is the primary UI class responsible for rendering the main window
+ * of the Quiz application.
+ * This class delegates quiz selection actions to a QuizActionListener to allow
+ * the controller layer to mediate between the view and the model.
+ * @author Ottilia Eriksson
+ */
 public class MainView {
 
     private JFrame frame;
