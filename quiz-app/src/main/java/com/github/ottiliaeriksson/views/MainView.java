@@ -99,4 +99,81 @@ public class MainView {
         frame.repaint();
     }
 
+    /**
+     * Displays a preview of the selected quiz.
+     * @param quizName The name of the selected quiz.
+     * @param numberOfQuestions The number of questions in the quiz.
+     */
+    public void displayQuizPreview(final String quizName,
+                                   final int numberOfQuestions) {
+        // Create a panel to hold the quiz preview components
+        quizPreviewPanel = new JPanel();
+        quizPreviewPanel.setLayout(
+                new BoxLayout(quizPreviewPanel, BoxLayout.Y_AXIS)
+        );
+        quizPreviewPanel.setBorder(BorderFactory.createEmptyBorder(
+                20, 10, 20, 10)
+        ); // Padding around the panel
+
+        // Create labels for quiz name and number of questions
+        final JLabel nameLabel = new JLabel(quizName, SwingConstants.CENTER);
+        nameLabel.setFont(AppConfig.QUIZ_NAME_FONT);
+        nameLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        final JLabel questionsLabel = new JLabel(
+                "Number of Questions: " + numberOfQuestions,
+                SwingConstants.CENTER);
+        questionsLabel.setFont(AppConfig.NUM_QUESTIONS_FONT);
+        questionsLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        // Create a start button
+        final JButton startButton = new JButton("Start Quiz");
+        startButton.setFont(AppConfig.START_BUTTON_FONT);
+        startButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        startButton.addActionListener(e ->
+                quizActionListener.onQuizAction(quizName)
+        ); // Callback to controller if start button is clicked
+
+        // Add labels and button to the quiz preview panel
+        quizPreviewPanel.add(nameLabel, BorderLayout.NORTH);
+        // Add vertical spacing
+        quizPreviewPanel.add(Box.createVerticalStrut(10));
+        quizPreviewPanel.add(questionsLabel, BorderLayout.CENTER);
+        // Add vertical spacing
+        quizPreviewPanel.add(Box.createVerticalStrut(20));
+        quizPreviewPanel.add(startButton, BorderLayout.SOUTH);
+
+        // Check if the split pane already exists
+        if (frame.getContentPane().getComponentCount() > 0 &&
+                frame.getContentPane().getComponent(0)
+                        instanceof JSplitPane splitPane) {
+            splitPane.setRightComponent(quizPreviewPanel);
+        } else {
+            // Split pane with quiz list on the left and preview on the right
+            final JSplitPane splitPane =
+                    new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
+            splitPane.setLeftComponent(
+                    frame.getContentPane().getComponent(0));
+            splitPane.setRightComponent(quizPreviewPanel);
+
+            // Set the resize weight to make both components equally sized
+            splitPane.setResizeWeight(0.5);
+
+            // Update the content pane with the split pane
+            frame.getContentPane().removeAll();
+            frame.getContentPane().add(splitPane, BorderLayout.CENTER);
+        }
+
+        frame.revalidate();
+        frame.repaint();
+    }
+
+    /**
+     * Retrieves array of JButtons with quiz names of all available quizzes.
+     * @return JButton[] with quiz names of all available quizzes
+     */
+    public JButton[] getQuizButtons() {
+        return quizButtons;
+    }
+
 }
