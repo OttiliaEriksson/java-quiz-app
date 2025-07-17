@@ -84,4 +84,12 @@ public class MainModel {
         if (activeQuestion == null)  return -1;
         return points;
     }
+
+    /**
+     * Returns the number of questions in a quiz
+     * @return the number of questions in a quiz
+     */
+    public int getNumberOfQuestions(String quizName) {
+        return QuizParser.getQuestionCount(quizName);
+    }
 }
