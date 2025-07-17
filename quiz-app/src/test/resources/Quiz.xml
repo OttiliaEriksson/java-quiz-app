@@ -1,0 +1,34 @@
+<quizzes>
+    <quiz>
+        <quiz-name>Test</quiz-name>
+        <question text="Vad är en hamburgare?">
+            <answer text="En sten" right-answer="false"/>
+            <answer text="En maträtt" right-answer="true"/>
+            <answer text="Ett djur" right-answer="false"/>
+        </question>
+        <question text="Vad är huvudstaden i Sverige?">
+            <answer text="Göteborg" right-answer="false"/>
+            <answer text="Stockholm" right-answer="true"/>
+            <answer text="Malmö" right-answer="false"/>
+            <answer text="Uppsala" right-answer="false"/>
+        </question>
+        <question text="Vilket år landade människan på månen första gången?">
+            <answer text="1965" right-answer="false"/>
+            <answer text="1969" right-answer="true"/>
+            <answer text="1971" right-answer="false"/>
+            <answer text="1975" right-answer="false"/>
+        </question>
+        <question text="Vilket grundämne har atomnummer 8?">
+            <answer text="Kväve" right-answer="false"/>
+            <answer text="Syre" right-answer="true"/>
+            <answer text="Helium" right-answer="false"/>
+            <answer text="Kol" right-answer="false"/>
+        </question>
+        <question text="Vilken är den största planeten i solsystemet?">
+            <answer text="Saturnus" right-answer="false"/>
+            <answer text="Jupiter" right-answer="true"/>
+            <answer text="Mars" right-answer="false"/>
+            <answer text="Venus" right-answer="false"/>
+        </question>
+    </quiz>
+</quizzes>
