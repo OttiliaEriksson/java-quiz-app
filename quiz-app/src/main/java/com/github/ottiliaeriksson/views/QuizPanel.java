@@ -1,5 +1,6 @@
 package com.github.ottiliaeriksson.views;
 
+import com.github.ottiliaeriksson.models.AnswerOption;
 import com.github.ottiliaeriksson.support.AppConfig;
 
 import javax.swing.*;
@@ -32,7 +33,7 @@ public class QuizPanel extends JPanel {
      */
     public QuizPanel(final String quizName, final int numberOfQuestions,
                      final String initialQuestionText,
-                     final String[] initialAnswerOptions) {
+                     final AnswerOption[] initialAnswerOptions) {
         setLayout(new BorderLayout());
 
         // Create a panel for holding the quizNameLabel and exitButton

@@ -1,5 +1,6 @@
 package com.github.ottiliaeriksson.views;
 
+import com.github.ottiliaeriksson.models.AnswerOption;
 import com.github.ottiliaeriksson.support.AppConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,8 +24,10 @@ public class QuestionPanelTest {
     public void setUp() {
         // Set up the QuestionPanel with sample question and answer options
         final String questionText = "What is the capital of France?";
-        final String[] answerOptions = {
-                "Paris", "London", "Berlin", "Copenhagen"
+        final AnswerOption[] answerOptions = {new AnswerOption("Paris", true),
+                new AnswerOption("New York", false),
+                new AnswerOption("Berlin", false),
+                new AnswerOption("Copenhagen", false)
         };
         questionPanel = new QuestionPanel(questionText, answerOptions);
     }

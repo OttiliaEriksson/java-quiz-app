@@ -1,5 +1,6 @@
 package com.github.ottiliaeriksson.views;
 
+import com.github.ottiliaeriksson.models.AnswerOption;
 import com.github.ottiliaeriksson.support.AppConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,7 +22,10 @@ public class QuizPanelTest {
     @BeforeEach
     public void setUp() {
         // Initialize QuizPanel before each test
-        final String[] answerOptions = {"1", "2", "3", "4"};
+        final AnswerOption[] answerOptions = {new AnswerOption("1", true),
+                new AnswerOption("2", false),
+                new AnswerOption("3", false),
+                new AnswerOption("4", false)};
         quizPanel = new QuizPanel("Test Quiz", SAMPLE_NR_OF_QUESTIONS,
                 "First Question", answerOptions);
     }

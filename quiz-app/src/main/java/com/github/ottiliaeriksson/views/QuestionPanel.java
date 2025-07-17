@@ -1,5 +1,6 @@
 package com.github.ottiliaeriksson.views;
 
+import com.github.ottiliaeriksson.models.AnswerOption;
 import com.github.ottiliaeriksson.support.AppConfig;
 
 import javax.swing.JButton;
@@ -33,7 +34,7 @@ public class QuestionPanel extends JPanel {
      * @param answerOptions An array of strings representing answer options.
      */
     public QuestionPanel(final String questionText,
-                         final String[] answerOptions) {
+                         final AnswerOption[] answerOptions) {
 
         // Set panel layout to BorderLayout
         setLayout(new BorderLayout());
@@ -55,7 +56,7 @@ public class QuestionPanel extends JPanel {
 
         // Create and add buttons for each answer option
         for (int i = 0; i < AppConfig.NUM_ANSWER_OPTIONS; i++) {
-            optionButtons[i] = new JButton(answerOptions[i]);
+            optionButtons[i] = new JButton(answerOptions[i].answerText());
             optionButtons[i].setFont(AppConfig.ANSWER_OPTION_FONT); // Set font
             optionsPanel.add(optionButtons[i]);
         }
