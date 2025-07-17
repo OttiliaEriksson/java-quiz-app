@@ -206,4 +206,13 @@ public class MainView {
         frame.repaint(); // Repaint the frame to update its appearance
     }
 
+    /**
+     * Retrieves a QuizPanel object that is displayed when taking a quiz.
+     * Returns the value null if no quiz has been started.
+     * @return QuizPanel object for the current quiz
+     */
+    public QuizPanel getQuizPanel() {
+        return quizPanel;
+    }
+
 }
