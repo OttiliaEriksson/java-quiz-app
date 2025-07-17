@@ -146,4 +146,64 @@ public final class QuizParser {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Returns the number of valid questions in a quiz with the given name.
+     *
+     * @param quizName the name of the quiz
+     * @return the number of valid questions in the specified quiz, or 0 if not found
+     * @throws RuntimeException if there is an error reading or parsing the XML file
+     */
+    public static int getQuestionCount(final String quizName) {
+        try {
+            final NodeList quizList = getQuizList();
+
+            for (int i = 0; i < quizList.getLength(); i++) {
+                final Node quizNode = quizList.item(i);
+                if (quizNode.getNodeType() == Node.ELEMENT_NODE) {
+                    final Element quizElement = (Element) quizNode;
+                    final String currentQuizName = quizElement
+                            .getElementsByTagName("quiz-name")
+                            .item(0).getTextContent();
+
+                    if (!currentQuizName.equals(quizName)) {
+                        continue;
+                    }
+
+                    return getValidQuestionCount(quizElement);
+                }
+            }
+        } catch (ParserConfigurationException | IOException | SAXException e) {
+            throw new RuntimeException(e);
+        }
+
+        return 0;
+    }
+
+    /**
+     * Counts and returns the number of valid questions in the provided quiz element.
+     * A question is valid if it has non-empty text and exactly the required number of answer options.
+     * @param quizElement the XML element representing the quiz
+     * @return the number of valid questions
+     */
+    private static int getValidQuestionCount(Element quizElement) {
+        final NodeList questionNodes = quizElement
+                .getElementsByTagName("question");
+
+        int validQuestionCount = 0;
+
+        for (int j = 0; j < questionNodes.getLength(); j++) {
+            final Element questionElement = (Element) questionNodes.item(j);
+            final String questionText = questionElement.getAttribute("text");
+
+            final NodeList answerNodes = questionElement
+                    .getElementsByTagName("answer");
+
+            if (!questionText.isEmpty()
+                    && answerNodes.getLength() == AppConfig.NUM_ANSWER_OPTIONS) {
+                validQuestionCount++;
+            }
+        }
+        return validQuestionCount;
+    }
 }
