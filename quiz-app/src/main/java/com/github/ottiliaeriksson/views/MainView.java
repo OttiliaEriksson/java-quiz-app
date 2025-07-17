@@ -215,4 +215,14 @@ public class MainView {
         return quizPanel;
     }
 
+    /**
+     * Display the final score at the end of a quiz in a dialog box.
+     * @param points The final score
+     */
+    public void displayFinalResult(int points) {
+        JOptionPane.showMessageDialog(frame,
+                "Final score: " + points,
+                "Quiz Result", JOptionPane.PLAIN_MESSAGE);
+    }
+
 }
