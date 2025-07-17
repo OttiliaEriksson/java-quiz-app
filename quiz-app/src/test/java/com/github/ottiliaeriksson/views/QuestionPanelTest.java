@@ -70,7 +70,10 @@ public class QuestionPanelTest {
     public void testUpdateQuestionLabelText() {
         // Update the panel with a new question
         final String newQuestionText = "What is the capital of Germany?";
-        final String[] newAnswerOptions = {"Paris", "Berlin", "Rome", "Oslo"};
+        final AnswerOption[] newAnswerOptions = {new AnswerOption("Paris", false),
+                new AnswerOption("New York", false),
+                new AnswerOption("Berlin", true),
+                new AnswerOption("Copenhagen", false)};
         questionPanel.updateQuestion(newQuestionText, newAnswerOptions);
 
         // Check if the question label is correctly updated
@@ -88,7 +91,10 @@ public class QuestionPanelTest {
 
         // Update the panel with a new question
         final String newQuestionText = "What is the capital of Germany?";
-        final String[] newAnswerOptions = {"Paris", "Berlin", "Rome", "Oslo"};
+        final AnswerOption[] newAnswerOptions = {new AnswerOption("Paris", false),
+                new AnswerOption("New York", false),
+                new AnswerOption("Berlin", true),
+                new AnswerOption("Copenhagen", false)};
         questionPanel.updateQuestion(newQuestionText, newAnswerOptions);
 
         // Check if the text for each option button is updated correctly

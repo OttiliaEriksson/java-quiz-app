@@ -87,7 +87,10 @@ public class QuizPanelTest {
         final String newQuestionText = "Second Question";
         quizPanel.getQuestionPanel().updateQuestion(
                 newQuestionText,
-                new String[]{"5", "6", "7", "8"}
+                new AnswerOption[]{new AnswerOption("5", true),
+                        new AnswerOption("6", false),
+                        new AnswerOption("7", false),
+                        new AnswerOption("8", false)}
         );
 
         assertEquals(
@@ -101,7 +104,10 @@ public class QuizPanelTest {
      */
     @Test
     public void testUpdateAnswerOptions() {
-        final String[] newAnswerOptions = {"5", "6", "7", "8"};
+        final AnswerOption[] newAnswerOptions = {new AnswerOption("5", true),
+                new AnswerOption("6", false),
+                new AnswerOption("7", false),
+                new AnswerOption("8", false)};
         quizPanel.getQuestionPanel().updateQuestion(
                 "Second Question",
                 newAnswerOptions

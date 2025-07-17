@@ -68,13 +68,13 @@ public class QuestionPanel extends JPanel {
      * @param answerOptions An array of strings representing new answer options.
      */
     public void updateQuestion(final String questionText,
-                               final String[] answerOptions) {
+                               final AnswerOption[] answerOptions) {
 
         // Update the question label text
         questionLabel.setText(questionText);
         // Update the buttons with answer options
         for (int i = 0; i < AppConfig.NUM_ANSWER_OPTIONS; i++) {
-            optionButtons[i].setText(answerOptions[i]);
+            optionButtons[i].setText(answerOptions[i].answerText());
         }
 
     }
