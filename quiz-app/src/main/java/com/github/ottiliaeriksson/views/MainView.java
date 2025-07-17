@@ -1,6 +1,7 @@
 package com.github.ottiliaeriksson.views;
 
 import com.github.ottiliaeriksson.controllers.QuizActionListener;
+import com.github.ottiliaeriksson.models.AnswerOption;
 import com.github.ottiliaeriksson.support.AppConfig;
 
 import javax.swing.*;
@@ -181,6 +182,28 @@ public class MainView {
      */
     public JButton[] getQuizButtons() {
         return quizButtons;
+    }
+
+    /**
+     * Adds a QuizPanel to the frame to start a new quiz.
+     * @param quizName The name of the quiz.
+     * @param numberOfQuestions The number of questions in the quiz.
+     * @param initialQuestionText The text of the initial question.
+     * @param initialAnswerOptions The initial answer options for the question.
+     */
+    public void displayQuizPanel(final String quizName,
+                                 final int numberOfQuestions,
+                                 final String initialQuestionText,
+                                 final AnswerOption[] initialAnswerOptions) {
+        // Create QuizPanel
+        quizPanel = new QuizPanel(quizName, numberOfQuestions,
+                initialQuestionText, initialAnswerOptions);
+
+        // Add QuizPanel to the frame
+        frame.getContentPane().removeAll(); // Remove existing components
+        frame.getContentPane().add(quizPanel); // Add QuizPanel to the frame
+        frame.revalidate(); // Revalidate the frame to reflect the changes
+        frame.repaint(); // Repaint the frame to update its appearance
     }
 
 }

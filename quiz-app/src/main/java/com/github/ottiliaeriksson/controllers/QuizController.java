@@ -26,8 +26,21 @@ public class QuizController {
         displayMainView();
     }
 
+    /**
+     * Starts a quiz based on the selected quiz name.
+     * @param quizName The name of the quiz to start.
+     */
     void startQuiz(final String quizName) {
+        // Load the quiz with questions into the model
+        model.loadQuiz(quizName);
 
+        // Get the first question of the quiz
+        model.changeQuestion();
+
+        // Display the QuizPanel
+        view.displayQuizPanel(quizName, model.getNumberOfQuestions(quizName),
+                model.getCurrentQuestion().questionText(),
+                model.getCurrentQuestion().answers());
     }
 
     /**

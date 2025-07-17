@@ -92,4 +92,12 @@ public class MainModel {
     public int getNumberOfQuestions(String quizName) {
         return QuizParser.getQuestionCount(quizName);
     }
+
+    /**
+     * Returns the current question in a quiz
+     * @return the current question in a quiz
+     */
+    public Question getCurrentQuestion() {
+        return activeQuestion;
+    }
 }
