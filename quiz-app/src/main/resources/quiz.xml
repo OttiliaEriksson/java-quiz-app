@@ -1,0 +1,85 @@
+<quizzes>
+    <quiz>
+        <quiz-name>General Knowledge</quiz-name>
+        <question text="What is the capital city of Canada?">
+            <answer text="Toronto" right-answer="false"/>
+            <answer text="Ottawa" right-answer="true"/>
+            <answer text="Vancouver" right-answer="false"/>
+            <answer text="Montreal" right-answer="false"/>
+        </question>
+        <question text="Which planet is known as the Red Planet?">
+            <answer text="Venus" right-answer="false"/>
+            <answer text="Mars" right-answer="true"/>
+            <answer text="Jupiter" right-answer="false"/>
+            <answer text="Mercury" right-answer="false"/>
+        </question>
+        <question text="Who wrote the play 'Romeo and Juliet'?">
+            <answer text="William Shakespeare" right-answer="true"/>
+            <answer text="Oscar Wilde" right-answer="false"/>
+            <answer text="Jane Austen" right-answer="false"/>
+            <answer text="Charles Dickens" right-answer="false"/>
+        </question>
+        <question text="What is the chemical symbol for water?">
+            <answer text="O2" right-answer="false"/>
+            <answer text="H2" right-answer="false"/>
+            <answer text="CO2" right-answer="false"/>
+            <answer text="H2O" right-answer="true"/>
+        </question>
+    </quiz>
+
+    <quiz>
+        <quiz-name>Science and Nature</quiz-name>
+        <question text="Which gas do plants absorb from the atmosphere?">
+            <answer text="Oxygen" right-answer="false"/>
+            <answer text="Nitrogen" right-answer="false"/>
+            <answer text="Carbon Dioxide" right-answer="true"/>
+            <answer text="Hydrogen" right-answer="false"/>
+        </question>
+        <question text="What part of the plant conducts photosynthesis?">
+            <answer text="Root" right-answer="false"/>
+            <answer text="Stem" right-answer="false"/>
+            <answer text="Leaf" right-answer="true"/>
+            <answer text="Flower" right-answer="false"/>
+        </question>
+        <question text="Which element has the chemical symbol 'Na'?">
+            <answer text="Sodium" right-answer="true"/>
+            <answer text="Nitrogen" right-answer="false"/>
+            <answer text="Neon" right-answer="false"/>
+            <answer text="Nickel" right-answer="false"/>
+        </question>
+        <question text="What is the largest organ in the human body?">
+            <answer text="Liver" right-answer="false"/>
+            <answer text="Brain" right-answer="false"/>
+            <answer text="Skin" right-answer="true"/>
+            <answer text="Heart" right-answer="false"/>
+        </question>
+    </quiz>
+
+    <quiz>
+        <quiz-name>World History</quiz-name>
+        <question text="Who was the first President of the United States?">
+            <answer text="Abraham Lincoln" right-answer="false"/>
+            <answer text="Thomas Jefferson" right-answer="false"/>
+            <answer text="George Washington" right-answer="true"/>
+            <answer text="John Adams" right-answer="false"/>
+        </question>
+        <question text="In which year did World War II end?">
+            <answer text="1942" right-answer="false"/>
+            <answer text="1945" right-answer="true"/>
+            <answer text="1939" right-answer="false"/>
+            <answer text="1950" right-answer="false"/>
+        </question>
+        <question text="Which empire was ruled by Julius Caesar?">
+            <answer text="Greek Empire" right-answer="false"/>
+            <answer text="Ottoman Empire" right-answer="false"/>
+            <answer text="Roman Empire" right-answer="true"/>
+            <answer text="Persian Empire" right-answer="false"/>
+        </question>
+        <question text="The Berlin Wall fell in which year?">
+            <answer text="1989" right-answer="true"/>
+            <answer text="1991" right-answer="false"/>
+            <answer text="1979" right-answer="false"/>
+            <answer text="1995" right-answer="false"/>
+        </question>
+    </quiz>
+</quizzes>
