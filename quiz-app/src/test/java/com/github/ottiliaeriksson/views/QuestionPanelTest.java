@@ -5,6 +5,8 @@ import com.github.ottiliaeriksson.support.AppConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class QuestionPanelTest {
 
     private QuestionPanel questionPanel;
+    private AnswerOption[] answerOptions;
 
     /**
      * Sets up the test environment by creating a QuestionPanel
@@ -24,7 +27,8 @@ public class QuestionPanelTest {
     public void setUp() {
         // Set up the QuestionPanel with sample question and answer options
         final String questionText = "What is the capital of France?";
-        final AnswerOption[] answerOptions = {new AnswerOption("Paris", true),
+        answerOptions = new AnswerOption[]{
+                new AnswerOption("Paris", true),
                 new AnswerOption("New York", false),
                 new AnswerOption("Berlin", false),
                 new AnswerOption("Copenhagen", false)
@@ -49,9 +53,10 @@ public class QuestionPanelTest {
      */
     @Test
     public void testOptionButtonTextInitialization() {
-        final String[] expectedOptions = {
-                "Paris", "London", "Berlin", "Copenhagen"
-        };
+        final String[] expectedOptions = Arrays.stream(answerOptions)
+                .map(AnswerOption::answerText)
+                .toArray(String[]::new);
+
         final String[] actualOptions = new String[AppConfig.NUM_ANSWER_OPTIONS];
 
         for (int i = 0; i < AppConfig.NUM_ANSWER_OPTIONS; i++) {
@@ -97,11 +102,15 @@ public class QuestionPanelTest {
                 new AnswerOption("Copenhagen", false)};
         questionPanel.updateQuestion(newQuestionText, newAnswerOptions);
 
+        final String[] expectedOptions = Arrays.stream(newAnswerOptions)
+                .map(AnswerOption::answerText)
+                .toArray(String[]::new);
+
         // Check if the text for each option button is updated correctly
         final String[] actualOptions = new String[AppConfig.NUM_ANSWER_OPTIONS];
         for (int i = 0; i < AppConfig.NUM_ANSWER_OPTIONS; i++) {
             actualOptions[i] = questionPanel.getOptionButtonText(i);
         }
-        assertArrayEquals(newAnswerOptions, actualOptions);
+        assertArrayEquals(expectedOptions, actualOptions);
     }
 }

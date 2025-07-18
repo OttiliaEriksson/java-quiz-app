@@ -5,6 +5,8 @@ import com.github.ottiliaeriksson.support.AppConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -113,11 +115,15 @@ public class QuizPanelTest {
                 newAnswerOptions
         );
 
-        final String[] answerOptions = new String[AppConfig.NUM_ANSWER_OPTIONS];
+        final String[] expected = Arrays.stream(newAnswerOptions)
+                .map(AnswerOption::answerText)
+                .toArray(String[]::new);
+
+        final String[] actual = new String[AppConfig.NUM_ANSWER_OPTIONS];
         for (int i = 0; i < AppConfig.NUM_ANSWER_OPTIONS; i++) {
-            answerOptions[i] = quizPanel.getQuestionPanel().
+            actual[i] = quizPanel.getQuestionPanel().
                     getOptionButtonText(i);
         }
-        assertArrayEquals(newAnswerOptions, answerOptions);
+        assertArrayEquals(expected, actual);
     }
 }
