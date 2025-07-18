@@ -41,6 +41,48 @@ public class QuizController {
         view.displayQuizPanel(quizName, model.getNumberOfQuestions(quizName),
                 model.getCurrentQuestion().questionText(),
                 model.getCurrentQuestion().answers());
+
+        // Add listener to answer option buttons
+        final JButton[] answerButtons = view.getQuizPanel().
+                getQuestionPanel().getOptionButtons();
+        for (JButton button : answerButtons) {
+            button.addActionListener(e -> handleUserAnswer(button.getText()));
+        }
+
+        // Add listener to the exit button
+        final JButton exitButton = view.getQuizPanel().getExitButton();
+        exitButton.addActionListener(e -> {
+            // reset values
+            model.reset();
+            // Display main view again
+            displayMainView();
+        });
+    }
+
+    /**
+     * Handles user's answer selection in the quiz for each question.
+     * @param answer The answer that the user selected.
+     */
+    private void handleUserAnswer(final String answer) {
+        // Update score if answer is correct
+        if(model.checkRightAnswer(answer)) {
+            view.getQuizPanel().updateScore(model.getPoints());
+        }
+
+        // Change to the next question if there are any left
+        if(model.getQuestionsLeft() > 0) {
+            // Change to next question
+            model.changeQuestion();
+            // Update Question panel with the next question
+            view.getQuizPanel().getQuestionPanel().
+                    updateQuestion(model.getCurrentQuestion().questionText(),
+                            model.getCurrentQuestion().answers());
+        } else {
+            // Display final result if no more questions left
+            view.displayFinalResult(model.getPoints());
+            // Display main view again
+            displayMainView();
+        }
     }
 
     /**
