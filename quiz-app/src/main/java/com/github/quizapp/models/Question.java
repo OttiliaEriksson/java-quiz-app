@@ -1,4 +1,4 @@
-package com.github.ottiliaeriksson.models;
+package com.github.quizapp.models;
 
 /**
  * Represents a single Question in a quiz, containing the question text

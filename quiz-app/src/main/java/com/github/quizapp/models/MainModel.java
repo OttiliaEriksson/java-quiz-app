@@ -1,6 +1,6 @@
-package com.github.ottiliaeriksson.models;
+package com.github.quizapp.models;
 
-import com.github.ottiliaeriksson.support.QuizParser;
+import com.github.quizapp.support.QuizParser;
 
 public class MainModel {
 

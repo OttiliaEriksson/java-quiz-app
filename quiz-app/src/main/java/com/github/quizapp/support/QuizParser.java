@@ -1,8 +1,8 @@
-package com.github.ottiliaeriksson.support;
+package com.github.quizapp.support;
 
-import com.github.ottiliaeriksson.models.AnswerOption;
-import com.github.ottiliaeriksson.models.Question;
-import com.github.ottiliaeriksson.models.Quiz;
+import com.github.quizapp.models.AnswerOption;
+import com.github.quizapp.models.Question;
+import com.github.quizapp.models.Quiz;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

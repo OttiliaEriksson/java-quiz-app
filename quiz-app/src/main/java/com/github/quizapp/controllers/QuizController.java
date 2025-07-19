@@ -1,7 +1,7 @@
-package com.github.ottiliaeriksson.controllers;
+package com.github.quizapp.controllers;
 
-import com.github.ottiliaeriksson.models.MainModel;
-import com.github.ottiliaeriksson.views.MainView;
+import com.github.quizapp.models.MainModel;
+import com.github.quizapp.views.MainView;
 
 import javax.swing.*;
 

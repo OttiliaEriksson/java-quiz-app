@@ -1,7 +1,7 @@
-package com.github.ottiliaeriksson.views;
+package com.github.quizapp.views;
 
-import com.github.ottiliaeriksson.models.AnswerOption;
-import com.github.ottiliaeriksson.support.AppConfig;
+import com.github.quizapp.models.AnswerOption;
+import com.github.quizapp.support.AppConfig;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;

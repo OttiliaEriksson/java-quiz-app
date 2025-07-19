@@ -1,4 +1,4 @@
-package com.github.ottiliaeriksson.models;
+package com.github.quizapp.models;
 
 import java.util.Deque;
 

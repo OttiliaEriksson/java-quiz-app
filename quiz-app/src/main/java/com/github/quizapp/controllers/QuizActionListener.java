@@ -1,4 +1,4 @@
-package com.github.ottiliaeriksson.controllers;
+package com.github.quizapp.controllers;
 
 /**
  * A functional interface for listening to quiz-related actions.

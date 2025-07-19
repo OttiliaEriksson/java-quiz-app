@@ -1,6 +1,6 @@
-package com.github.ottiliaeriksson;
+package com.github.quizapp;
 
-import com.github.ottiliaeriksson.controllers.QuizController;
+import com.github.quizapp.controllers.QuizController;
 
 import javax.swing.*;
 

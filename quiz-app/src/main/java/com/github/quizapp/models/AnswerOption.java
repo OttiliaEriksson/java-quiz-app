@@ -1,4 +1,4 @@
-package com.github.ottiliaeriksson.models;
+package com.github.quizapp.models;
 
 /**
  * Represents a single answer option for a quiz question.

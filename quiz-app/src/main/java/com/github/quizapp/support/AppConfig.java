@@ -1,4 +1,4 @@
-package com.github.ottiliaeriksson.support;
+package com.github.quizapp.support;
 
 import java.awt.*;
 
