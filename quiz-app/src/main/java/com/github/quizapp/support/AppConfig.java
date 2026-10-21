@@ -13,6 +13,9 @@ public class AppConfig {
         throw new IllegalStateException("Utility class");
     }
 
+    /** Name of the resource file with available quizzes */
+    public static final String QUIZ_FILE = "quiz.xml";
+
     /** Number of answer options. */
     public static final int NUM_ANSWER_OPTIONS = 4;
 

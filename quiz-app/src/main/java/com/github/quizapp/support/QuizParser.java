@@ -105,7 +105,7 @@ public final class QuizParser {
     private static NodeList getQuizList() throws ParserConfigurationException,
             IOException, SAXException {
         final InputStream inputStream = QuizParser.class
-                .getClassLoader().getResourceAsStream("quiz.xml");
+                .getClassLoader().getResourceAsStream(AppConfig.QUIZ_FILE);
         if (inputStream == null) {
             throw new RuntimeException("Could not find file");
         }
